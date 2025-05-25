@@ -1,0 +1,158 @@
+coin pusher character.png
+	size: 2048, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Circle
+	bounds: 304, 822, 195, 195
+Circle_2
+	bounds: 1124, 22, 98, 98
+Face_Add
+	bounds: 90, 706, 32, 9
+Glow
+	bounds: 2, 6, 169, 18
+Glow02
+	bounds: 902, 422, 128, 128
+Glow_2
+	bounds: 501, 823, 169, 18
+Orb
+	bounds: 470, 479, 60, 60
+Shockwave
+	bounds: 976, 902, 115, 112
+	offsets: 7, 8, 128, 128
+	rotate: 90
+Spark_All
+	bounds: 470, 631, 189, 189
+arm L  idle2
+	bounds: 1032, 429, 139, 145
+arm L atk
+	bounds: 1058, 596, 136, 144
+arm L idle
+	bounds: 733, 910, 120, 107
+	rotate: 180
+arm L jackpot
+	bounds: 1054, 161, 153, 150
+	offsets: 0, 0, 155, 150
+	rotate: 180
+arm R atk
+	bounds: 993, 59, 135, 159
+	rotate: 180
+arm R idle
+	bounds: 1165, 755, 120, 107
+	rotate: 270
+arm R jackpot
+	bounds: 1090, 864, 153, 150
+	offsets: 2, 0, 155, 150
+	rotate: 90
+back hair L idle
+	bounds: 2, 366, 263, 349
+back hair R idle
+	bounds: 2, 26, 214, 354
+breast L idle
+	bounds: 339, 339, 92, 105
+breast R idle
+	bounds: 1190, 613, 92, 104
+calf L idle
+	bounds: 2, 585, 63, 130
+calf R idle
+	bounds: 950, 553, 56, 203
+cloth 1 idle
+	bounds: 542, 103, 165, 399
+	rotate: 180
+cloth 2 idle
+	bounds: 971, 536, 102, 326
+earring L idle
+	bounds: 67, 603, 21, 55
+	offsets: 0, 1, 21, 56
+earring R idle
+	bounds: 67, 660, 21, 55
+	offsets: 0, 1, 21, 56
+face atk
+	bounds: 655, 475, 174, 225
+	offsets: 61, 0, 235, 225
+face idle
+	bounds: 501, 841, 176, 225
+	offsets: 59, 0, 235, 225
+	rotate: 90
+face idle2
+	bounds: 669, 701, 174, 225
+	offsets: 61, 0, 235, 225
+face jackpot
+	bounds: 750, 84, 164, 156
+	rotate: 270
+foot L idle
+	bounds: 830, 480, 44, 98
+foot R idle
+	bounds: 709, 378, 46, 95
+front hair L idle
+	bounds: 1057, 707, 134, 185
+front hair R idle
+	bounds: 1143, 402, 129, 163
+glow_light_neo
+	bounds: 2, 717, 300, 300
+hair top idle2
+	bounds: 598, 8, 333, 185
+	rotate: 90
+hand L atk
+	bounds: 1143, 272, 136, 118
+	rotate: 90
+hand L idle
+	bounds: 1240, 95, 104, 103
+hand L idle2
+	bounds: 389, 10, 78, 131
+hand L jackpot
+	bounds: 1240, 362, 98, 98
+	offsets: 0, 0, 99, 98
+	rotate: 180
+hand R atk
+	bounds: 1181, 186, 106, 108
+hand R idle
+	bounds: 1252, 225, 104, 103
+	rotate: 90
+hand R jackpot
+	bounds: 1240, 707, 98, 98
+	offsets: 1, 0, 99, 98
+mid hair L idle
+	bounds: 908, 10, 215, 109
+	rotate: 90
+mid hair R idle
+	bounds: 1233, 798, 219, 85
+	rotate: 270
+orb_1
+	bounds: 1032, 311, 109, 109
+orb_gl
+	bounds: 902, 227, 128, 128
+thigh L idle
+	bounds: 441, 524, 105, 209
+	rotate: 270
+thigh R idle
+	bounds: 862, 813, 112, 204
+	rotate: 180
+top arm L atk
+	bounds: 789, 5, 96, 136
+	rotate: 90
+top arm L idle
+	bounds: 1187, 505, 129, 117
+	offsets: 0, 0, 129, 121
+top arm L idle copy
+	bounds: 1193, 47, 129, 118
+	offsets: 0, 0, 129, 121
+	rotate: 90
+top arm R atk
+	bounds: 304, 731, 89, 152
+	rotate: 90
+top hair atk
+	bounds: 218, 5, 413, 185
+	rotate: 270
+top hair idle
+	bounds: 812, 551, 279, 136
+	rotate: 90
+top hair jackpot
+	bounds: 384, 2, 461, 188
+	rotate: 90
+torso idle
+	bounds: 255, 446, 213, 283
+waist idle
+	bounds: 771, 267, 206, 129
+	offsets: 1, 0, 207, 129
+	rotate: 90

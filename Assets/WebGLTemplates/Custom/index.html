@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{{{ PRODUCT_NAME }}}</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.png">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+
+<body style="background-color:white;">
+
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" width=100% height=100%></canvas>
+    <div class="content">
+      <img src="TemplateData/logo.gif" alt="Logo" class="centered-logo">
+      <div class="progress-container">
+        <div class="progress-text">0%</div>
+        <progress class="progress-bar" value="0.0" max="1.0" class="progress-bar"></progress>
+        <div class="progress-loading">LOADING...</div>
+      </div>
+    </div>
+
+    <div id="unity-warning"> </div>
+  </div>
+
+  <script>
+
+    function GetBrowser() {
+      var isOpera = (!!window.opr && !!window.opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+      var isFirefox = typeof InstallTrigger !== 'undefined';
+      var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+      var isIphoneIpadSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      var isIE = /*@cc_on!@*/false || !!document.documentMode;
+      var isEdge = !isIE && !!window.StyleMedia;
+      var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+      if (isOpera) {
+        console.log("Opera");
+        return "Opera";
+      }
+      else if (isFirefox) {
+        console.log("Firefox");
+        return "Firefox";
+      }
+      else if (isSafari || isIphoneIpadSafari) {
+        console.log("Safari");
+        return "Safari";
+      }
+      else if (isIE) {
+        console.log("IE");
+        return "IE";
+      }
+      else if (isEdge) {
+        console.log("Edge");
+        return "Edge";
+      }
+      else if (isChrome) {
+        console.log("Chrome");
+        return "Chrome";
+      }
+      else {
+        console.log("Unknown");
+        return "Unknown";
+      }
+    }
+
+    function Device() {
+      return (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ? "Handheld" : "Desktop";
+    }
+
+    function CopyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(
+        function () {
+          console.log("Copying to clipboard was successful!");
+        },
+        function (err) {
+          console.error("Could not copy text: ", err);
+        });
+    }
+
+    function FullScreen() {
+      if (IsFullScreen())
+        closeFullscreen();
+      else
+        openFullscreen();
+    }
+
+    function IsFullScreen() {
+      return !!(document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement)
+    }
+
+    var elem = document.documentElement;
+    function openFullscreen() {
+      if (elem.requestFullscreen)
+        elem.requestFullscreen();
+      else if (elem.webkitRequestFullscreen) /* Safari */
+        elem.webkitRequestFullscreen();
+      else if (elem.msRequestFullscreen) /* IE11 */
+        elem.msRequestFullscreen();
+    }
+
+    function closeFullscreen() {
+      if (document.exitFullscreen)
+        document.exitFullscreen();
+      else if (document.webkitExitFullscreen) /* Safari */
+        document.webkitExitFullscreen();
+      else if (document.msExitFullscreen) /* IE11 */
+        document.msExitFullscreen();
+    }
+
+    function encryptDataAndSendBack(data, keyHex, gameObjectName, functionName) {
+      const secretKey = CryptoJS.enc.Utf8.parse(keyHex);
+      let encryptedText = CryptoJS.AES.encrypt(data, secretKey, {
+        mode: CryptoJS.mode.ECB,
+      }).toString();
+      Instance.SendMessage(gameObjectName, functionName, encryptedText);
+    }
+
+    function decryptDataAndSendBack(data, keyHex, gameObjectName, functionName) {
+		const secretKey = CryptoJS.enc.Utf8.parse(keyHex);
+		let bytes = CryptoJS.AES.decrypt(data, secretKey, {
+			mode: CryptoJS.mode.ECB,
+		});
+		let decryptedText = bytes.toString(CryptoJS.enc.Utf8);
+		Instance.SendMessage(gameObjectName, functionName, decryptedText);
+	}
+	
+	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+      openFullscreen();
+
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var content = document.querySelector(".content");
+    var progressText = document.querySelector(".progress-text");
+    var progressBar = document.querySelector(".progress-bar");
+    var warningBanner = document.querySelector("#unity-warning");
+    var Instance;
+
+    // Shows a temporary message banner/ribbon for a few seconds, or
+    // a permanent error message on top of the canvas if type=='error'.
+    // If type=='warning', a yellow highlight color is used.
+    // Modify or remove this function to customize the visually presented
+    // way that non-critical warnings and error messages are presented to the
+    // user.
+    function unityShowBanner(msg, type) {
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: #f4436d; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function () {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
+
+    var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+      var config = {
+        dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+        frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+        #if USE_WASM
+          codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+        #endif
+        #if MEMORY_FILENAME
+          memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+        #endif
+        #if SYMBOLS_FILENAME
+          symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+        #endif
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+        productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+        productVersion: "1.0"
+      };
+
+    // By default Unity keeps WebGL canvas render target size matched with
+    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+    // Set this to false if you want to decouple this synchronization from
+    // happening inside the engine, and you would instead like to size up
+    // the canvas DOM size and WebGL render target sizes yourself.
+    // config.matchWebGLToCanvasSize = false;
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      // Mobile device style: fill the whole browser client area with the game canvas:
+
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      
+      // unityShowBanner('For better experience keep mobile in landscape mode.');
+    } else {
+      // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+    }
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBar.value = progress
+        progressText.innerHTML = Math.floor(100 * progress) + "%";
+      }).then((unityInstance) => {
+        content.style.display = "none";
+        Instance = unityInstance;
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+
+    // Overwrite fetch function to include credentials for sending cookie data
+    const originalfetch = fetch;
+    fetch = function (url, data) {
+      data = { ...data, ...{ credentials: "include" } };
+      return originalfetch(url, data);
+    };
+
+  </script>
+</body>
+
+</html>

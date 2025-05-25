@@ -1,0 +1,70 @@
+blackhole.png
+	size: 2048, 2048
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+BH Base
+	bounds: 1620, 1637, 236, 236
+BH Base glow
+	bounds: 1287, 911, 290, 290
+	offsets: 4, 4, 298, 298
+BH FX1
+	bounds: 1287, 1203, 328, 329
+	offsets: 2, 2, 332, 333
+BH FX2
+	bounds: 760, 18, 348, 340
+	offsets: 3, 2, 353, 344
+BH FX3
+	bounds: 1620, 1434, 209, 201
+	offsets: 2, 2, 212, 204
+BH FX4
+	bounds: 1110, 14, 344, 331
+	offsets: 3, 2, 348, 335
+	rotate: 90
+BH FX5
+	bounds: 393, 2, 365, 356
+	offsets: 1, 1, 367, 358
+BH FX6
+	bounds: 1287, 1534, 339, 331
+	offsets: 4, 2, 345, 337
+	rotate: 90
+BH FX7
+	bounds: 2, 20, 389, 338
+	offsets: 14, 4, 411, 348
+BH cover
+	bounds: 1743, 414, 223, 224
+	offsets: 26, 8, 259, 251
+BH spin1
+	bounds: 1616, 911, 428, 163
+	rotate: 90
+BH spin2
+	bounds: 1608, 25, 428, 163
+	rotate: 90
+BH spin3
+	bounds: 1578, 481, 428, 163
+	rotate: 270
+BH spin4
+	bounds: 1443, 52, 428, 163
+	rotate: 90
+BH spin5
+	bounds: 1287, 481, 428, 163
+	rotate: 90
+THUNDER1
+	bounds: 1435, 493, 116, 53
+	offsets: 6, 4, 151, 76
+THUNDER2
+	bounds: 1452, 568, 118, 44
+	offsets: 11, 3, 151, 76
+THUNDER3
+	bounds: 1617, 1378, 127, 54
+	offsets: 8, 5, 151, 76
+spark1
+	bounds: 2, 360, 1283, 301
+spark2
+	bounds: 2, 663, 1283, 301
+spark3
+	bounds: 2, 966, 1283, 301
+spark4
+	bounds: 2, 1269, 1283, 301
+spark5
+	bounds: 2, 1572, 1283, 301

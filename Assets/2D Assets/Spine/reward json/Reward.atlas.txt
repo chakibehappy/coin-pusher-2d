@@ -1,0 +1,41 @@
+Reward.png
+	size: 1024, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Base shape
+	bounds: 2, 500, 763, 190
+	offsets: 0, 30, 763, 220
+Bright1
+	bounds: 517, 87, 219, 136
+	offsets: 1, 1, 220, 137
+Bright2
+	bounds: 738, 2, 96, 97
+	offsets: 1, 0, 98, 99
+	rotate: 90
+Bright3
+	bounds: 738, 100, 79, 123
+	offsets: 1, 0, 81, 124
+Bright4
+	bounds: 584, 11, 96, 74
+	offsets: 9, 2, 108, 85
+Moon
+	bounds: 555, 225, 279, 273
+	offsets: 2, 3, 284, 279
+Reward FX1
+	bounds: 2, 49, 191, 138
+	offsets: 20, 7, 221, 155
+Reward FX2
+	bounds: 195, 3, 198, 132
+Reward FX3
+	bounds: 395, 12, 187, 73
+Reward text
+	bounds: 2, 347, 551, 151
+	offsets: 3, 4, 557, 158
+SUN
+	bounds: 305, 137, 208, 210
+	offsets: 3, 2, 213, 214
+	rotate: 90
+shadow
+	bounds: 2, 189, 301, 156
+	offsets: 0, 0, 301, 160

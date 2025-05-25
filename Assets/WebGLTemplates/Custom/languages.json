@@ -1,0 +1,74 @@
+{
+  "en": {
+    "labels": {
+      "txt_start_game": "START",
+      "txt_how_to_play": "HOW TO PLAY",
+      "txt_bet_per_coin": "Bet per Coin",
+      "txt_coin_single": "Coin",
+      "txt_coin_plural": "Coins",
+	  "txt_shoot_coin" : "SHOOT COIN!",
+      "txt_sound": "Sound",
+      "txt_bgm": "BGM",
+      "txt_sfx": "SFX",
+      "txt_confirm": "Confirm",
+      "txt_history": "History",
+      "txt_date_history": "Date",
+      "txt_bet_history": "Bet",
+      "txt_result_history": "Result",
+      "txt_tutorial": "Tutorial",
+      "txt_info": "Info",
+      "txt_free_coins": "FREE\nCOINS!",
+      "txt_bonus": "BONUS",
+	  "txt_no_internet_info" : "Connection lost. Please check your internet connection"
+    },
+    "info_contents": {
+      "pages": [
+        {
+		  "content": "<html><head><style>body { background-color: red; color: white; font-family: sans-serif; padding: 20px; } .container { background-color: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; }</style></head><body><div class='container'><h2><b>Welcome to the adventure!</b></h2><p>Your goal is to find the legendary treasure hidden across these lands.</p><p>Use the following controls to move and interact:</p><img src='https://images.pushsquare.com/34bb8a7ffcae1/final-fantasy-7-rebirth-ps5.900x.jpg' width='80%'></div></body></html>"
+		},
+        {
+          "content": "<ul><li><b>Movement:</b> Use the [W], [A], [S], [D] keys or the [Arrow Keys] to move your character.</li><li><b>Jump:</b> Press the [Spacebar] to leap over obstacles.</li></ul><p>Look for clues in the environment to progress.</p><img src=\"images/environment_interaction.png\" width=\"60%\">"
+        },
+        {
+          "content": "<p><b>Welcome to the adventure!</b> Your goal is to find the legendary treasure hidden across these lands.</p><p>Use the following controls to move and interact:</p><img src=\"https://images.pushsquare.com/34bb8a7ffcae1/final-fantasy-7-rebirth-ps5.900x.jpg\" width=\"80%\">"
+        }
+      ]
+    }
+  },
+  "id": {
+    "labels": {
+      "txt_start_game": "START",
+      "txt_how_to_play": "HOW TO PLAY",
+      "txt_bet_per_coin": "Bet per Coin",
+      "txt_coin_single": "Coin",
+      "txt_coin_plural": "Coins",
+	  "txt_shoot_coin" : "TEMBAK KOIN!",
+      "txt_sound": "Sound",
+      "txt_bgm": "BGM",
+      "txt_sfx": "SFX",
+      "txt_confirm": "Confirm",
+      "txt_history": "History",
+      "txt_date_history": "Date",
+      "txt_bet_history": "Bet",
+      "txt_result_history": "Result",
+      "txt_tutorial": "Tutorial",
+      "txt_info": "Info",
+      "txt_free_coins": "FREE\nCOINS!",
+      "txt_bonus": "BONUS",
+	  "txt_no_internet_info" : "Connection lost. Please check your internet connection"
+    },
+    "info_contents": {
+      "pages": [
+        {
+		  "content": "<html><head><style>body { background-color: red; color: white; font-family: sans-serif; padding: 20px; } .container { background-color: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; }</style></head><body><div class='container'><h2><b>Welcome to the adventure!</b></h2><p>Your goal is to find the legendary treasure hidden across these lands.</p><p>Use the following controls to move and interact:</p><img src='https://images.pushsquare.com/34bb8a7ffcae1/final-fantasy-7-rebirth-ps5.900x.jpg' width='80%'></div></body></html>"
+		},
+        {
+          "content": "<ul><li><b>Movement:</b> Use the [W], [A], [S], [D] keys or the [Arrow Keys] to move your character.</li><li><b>Jump:</b> Press the [Spacebar] to leap over obstacles.</li></ul><p>Look for clues in the environment to progress.</p><img src=\"images/environment_interaction.png\" width=\"60%\">"
+        },
+        {
+          "content": "<p><b>Welcome to the adventure!</b> Your goal is to find the legendary treasure hidden across these lands.</p><p>Use the following controls to move and interact:</p><img src=\"https://images.pushsquare.com/34bb8a7ffcae1/final-fantasy-7-rebirth-ps5.900x.jpg\" width=\"80%\">"
+        }
+      ]
+    }
+  }
+}

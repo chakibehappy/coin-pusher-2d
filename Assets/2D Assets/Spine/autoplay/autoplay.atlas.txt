@@ -1,0 +1,27 @@
+autoplay.png
+	size: 1024, 256
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Autoplay off
+	bounds: 170, 12, 155, 167
+ON dark green
+	bounds: 708, 12, 79, 36
+	rotate: 90
+ON glow green
+	bounds: 627, 17, 79, 36
+ON shadow
+	bounds: 627, 55, 79, 36
+arrow
+	bounds: 715, 93, 34, 31
+	rotate: 90
+circle arrow
+	bounds: 627, 93, 86, 86
+	offsets: 0, 3, 87, 89
+dark green
+	bounds: 477, 30, 148, 149
+glow green
+	bounds: 327, 30, 148, 149
+layout
+	bounds: 2, 2, 166, 177
+	offsets: 1, 0, 168, 178

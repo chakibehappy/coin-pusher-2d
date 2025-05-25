@@ -1,0 +1,19 @@
+1 coin toggle.png
+	size: 1024, 128
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+1 coin
+	bounds: 511, 2, 50, 50
+1 coin button off
+	bounds: 257, 9, 252, 114
+Rectabgle
+	bounds: 2, 8, 253, 115
+ball green
+	bounds: 563, 5, 47, 47
+green bg
+	bounds: 511, 54, 241, 69
+	offsets: 1, 1, 243, 71
+green bg glow
+	bounds: 754, 54, 241, 69
+	offsets: 1, 1, 243, 71

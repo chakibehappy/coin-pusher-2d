@@ -1,0 +1,25 @@
+carousel.png
+	size: 1024, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+base
+	bounds: 252, 55, 320, 259
+	offsets: 64, 38, 438, 625
+horse
+	bounds: 345, 626, 76, 67
+lamp1
+	bounds: 2, 669, 24, 24
+	offsets: 1, 1, 26, 26
+light top
+	bounds: 2, 2, 236, 304
+	offsets: 132, 168, 438, 625
+middle
+	bounds: 2, 307, 390, 386
+	offsets: 24, 154, 438, 625
+stick
+	bounds: 240, 151, 10, 159
+top
+	bounds: 391, 314, 379, 378
+	offsets: 29, 191, 438, 625
+	rotate: 270

@@ -1,0 +1,25 @@
+background.png
+	size: 1024, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+BG
+	bounds: 2, 156, 525, 371
+bridge
+	bounds: 2, 7, 525, 147
+cloud
+	bounds: 715, 289, 126, 66
+	offsets: 0, 0, 126, 67
+	rotate: 90
+cloud1
+	bounds: 641, 50, 215, 86
+	rotate: 90
+smoke
+	bounds: 670, 417, 110, 87
+	rotate: 90
+train1
+	bounds: 529, 266, 261, 192
+	rotate: 90
+train2
+	bounds: 529, 2, 263, 110
+	rotate: 90

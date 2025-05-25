@@ -1,0 +1,6 @@
+shoot 1 coin-> saat nembak 1 coin
+shoot 5 coin-> saat nembak 5 coin
+start spinwheel-> saat start animasi spinwheel
+spinweel result-> saat spinwheel berhenti
+coin drop-> saat ada koin yg terdorong jatuh
+total reward-> saat total jumlah uang muncul

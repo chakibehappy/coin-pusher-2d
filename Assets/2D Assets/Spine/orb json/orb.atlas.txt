@@ -1,0 +1,326 @@
+orb.png
+	size: 1024, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Circle_DragonLord_R_01
+	bounds: 2, 664, 256, 256
+Circle_InnerOuterGlow_01
+	bounds: 260, 792, 128, 128
+Glow_Neo
+	bounds: 2, 193, 224, 225
+	offsets: 16, 15, 256, 256
+	rotate: 90
+Twirl_Mask_01
+	bounds: 260, 668, 121, 122
+	offsets: 4, 3, 128, 128
+crystal ball
+	bounds: 2, 2, 189, 189
+crystal ball dim
+	bounds: 193, 2, 189, 189
+fx1/1
+	bounds: 720, 169, 68, 89
+	offsets: 46, 109, 167, 219
+	rotate: 90
+fx1/2
+	bounds: 409, 234, 66, 152
+	offsets: 48, 62, 167, 219
+fx1/3
+	bounds: 384, 11, 69, 139
+	offsets: 46, 48, 167, 219
+	rotate: 90
+fx1/4
+	bounds: 456, 89, 70, 143
+	offsets: 45, 45, 167, 219
+fx1/5
+	bounds: 384, 82, 70, 150
+	offsets: 46, 37, 167, 219
+fx1/6
+	bounds: 433, 388, 65, 154
+	offsets: 51, 37, 167, 219
+fx1/7
+	bounds: 259, 443, 38, 136
+	offsets: 76, 36, 167, 219
+	rotate: 90
+fx1/8
+	bounds: 743, 281, 39, 133
+	offsets: 76, 36, 167, 219
+fx3/1
+	bounds: 433, 641, 21, 21
+	offsets: 31, 31, 86, 85
+fx3/10
+	bounds: 772, 89, 68, 67
+	offsets: 4, 16, 86, 85
+	rotate: 90
+fx3/2
+	bounds: 849, 311, 53, 57
+	offsets: 15, 11, 86, 85
+fx3/3
+	bounds: 623, 582, 60, 66
+	offsets: 12, 6, 86, 85
+	rotate: 90
+fx3/4
+	bounds: 542, 647, 69, 75
+	offsets: 8, 2, 86, 85
+	rotate: 90
+fx3/5
+	bounds: 459, 718, 79, 85
+	offsets: 3, 0, 86, 85
+fx3/7
+	bounds: 390, 822, 82, 85
+	offsets: 3, 0, 86, 85
+fx3/8
+	bounds: 459, 631, 81, 85
+	offsets: 4, 0, 86, 85
+fx3/9
+	bounds: 433, 544, 83, 85
+	offsets: 3, 0, 86, 85
+fx4/lightning_n_1_sheet_1
+	bounds: 259, 423, 21, 18
+	offsets: 24, 1, 65, 86
+fx4/lightning_n_1_sheet_10
+	bounds: 390, 914, 5, 6
+	offsets: 31, 13, 65, 86
+fx4/lightning_n_1_sheet_2
+	bounds: 850, 559, 42, 48
+	offsets: 11, 1, 65, 86
+fx4/lightning_n_1_sheet_3
+	bounds: 851, 228, 50, 52
+	offsets: 8, 1, 65, 86
+fx4/lightning_n_1_sheet_5
+	bounds: 850, 447, 53, 54
+	offsets: 7, 0, 65, 86
+fx4/lightning_n_1_sheet_6
+	bounds: 850, 503, 40, 54
+	offsets: 7, 0, 65, 86
+fx4/lightning_n_1_sheet_7
+	bounds: 798, 861, 54, 64
+	offsets: 7, 1, 65, 86
+	rotate: 90
+fx4/lightning_n_1_sheet_8
+	bounds: 837, 25, 54, 62
+	offsets: 7, 2, 65, 86
+fx4/lightning_n_1_sheet_9
+	bounds: 841, 89, 54, 61
+	offsets: 6, 3, 65, 86
+fx5/s3_0
+	bounds: 717, 827, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_1
+	bounds: 717, 745, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_10
+	bounds: 717, 663, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_11
+	bounds: 704, 498, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_12
+	bounds: 702, 581, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_13
+	bounds: 687, 7, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_14
+	bounds: 680, 416, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_15
+	bounds: 662, 334, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_16
+	bounds: 662, 252, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_17
+	bounds: 639, 170, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_18
+	bounds: 636, 808, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_19
+	bounds: 636, 726, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_2
+	bounds: 623, 499, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_20
+	bounds: 621, 644, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_21
+	bounds: 609, 89, 80, 79
+	offsets: 2, 2, 84, 84
+fx5/s3_22
+	bounds: 606, 7, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_23
+	bounds: 599, 417, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_24
+	bounds: 581, 335, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_25
+	bounds: 581, 253, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_26
+	bounds: 558, 171, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_27
+	bounds: 555, 800, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_28
+	bounds: 542, 562, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_29
+	bounds: 540, 718, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_3
+	bounds: 528, 89, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_4
+	bounds: 525, 7, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_5
+	bounds: 518, 480, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_6
+	bounds: 500, 398, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_7
+	bounds: 500, 316, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_8
+	bounds: 477, 234, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx5/s3_9
+	bounds: 474, 805, 80, 79
+	offsets: 2, 2, 84, 84
+	rotate: 90
+fx6/Poison_Wave_10
+	bounds: 862, 609, 39, 41
+	offsets: 2, 1, 43, 43
+fx6/Poison_Wave_11
+	bounds: 555, 882, 38, 41
+	offsets: 3, 1, 43, 43
+	rotate: 90
+fx6/Poison_Wave_12
+	bounds: 229, 194, 38, 40
+	offsets: 3, 1, 43, 43
+	rotate: 90
+fx6/Poison_Wave_13
+	bounds: 864, 867, 38, 41
+	offsets: 3, 1, 43, 43
+fx6/Poison_Wave_14
+	bounds: 863, 824, 38, 41
+	offsets: 3, 1, 43, 43
+fx6/Poison_Wave_15
+	bounds: 863, 781, 38, 41
+	offsets: 3, 1, 43, 43
+fx6/Poison_Wave_16
+	bounds: 861, 738, 38, 41
+	offsets: 3, 1, 43, 43
+fx6/Poison_Wave_17
+	bounds: 862, 695, 38, 41
+	offsets: 3, 1, 43, 43
+fx6/Poison_Wave_18
+	bounds: 862, 652, 38, 41
+	offsets: 3, 1, 43, 43
+fx6/Poison_Wave_3
+	bounds: 397, 420, 24, 25
+	offsets: 10, 8, 43, 43
+fx6/Poison_Wave_4
+	bounds: 634, 893, 26, 27
+	offsets: 9, 8, 43, 43
+fx6/Poison_Wave_5
+	bounds: 506, 891, 28, 29
+	offsets: 8, 7, 43, 43
+fx6/Poison_Wave_6
+	bounds: 474, 889, 30, 31
+	offsets: 7, 6, 43, 43
+fx6/Poison_Wave_7
+	bounds: 397, 447, 32, 34
+	offsets: 6, 4, 43, 43
+fx6/Poison_Wave_8
+	bounds: 598, 883, 34, 37
+	offsets: 5, 3, 43, 43
+fx6/Poison_Wave_9
+	bounds: 271, 193, 36, 39
+	offsets: 4, 2, 43, 43
+fxx2/Layer 10
+	bounds: 784, 239, 65, 70
+	offsets: 15, 15, 98, 99
+fxx2/Layer 11
+	bounds: 761, 416, 66, 71
+	offsets: 13, 15, 98, 99
+fxx2/Layer 2
+	bounds: 785, 489, 68, 63
+	offsets: 12, 18, 98, 99
+	rotate: 90
+fxx2/Layer 3
+	bounds: 768, 19, 68, 67
+	offsets: 12, 14, 98, 99
+	rotate: 90
+fxx2/Layer 4
+	bounds: 784, 311, 69, 63
+	offsets: 12, 19, 98, 99
+	rotate: 90
+fxx2/Layer 5
+	bounds: 811, 159, 61, 67
+	offsets: 20, 17, 98, 99
+fxx2/Layer 6
+	bounds: 798, 723, 61, 69
+	offsets: 19, 15, 98, 99
+fxx2/Layer 7
+	bounds: 798, 794, 63, 65
+	offsets: 18, 20, 98, 99
+fxx2/Layer 8
+	bounds: 798, 652, 62, 69
+	offsets: 17, 16, 98, 99
+fxx2/Layer 9
+	bounds: 783, 580, 65, 70
+	offsets: 15, 15, 98, 99
+glow
+	bounds: 259, 483, 179, 172
+	offsets: 2, 0, 183, 178
+	rotate: 90
+glow2
+	bounds: 229, 234, 183, 178
+	rotate: 90
+light_yellow
+	bounds: 691, 89, 79, 78
+	offsets: 22, 26, 128, 128
+pedestal
+	bounds: 390, 664, 156, 67
+	rotate: 90
+sp
+	bounds: 2, 419, 255, 243
+	offsets: 12, 39, 298, 298
+spikey
+	bounds: 829, 382, 60, 63
+	offsets: 1, 1, 65, 66

@@ -1,0 +1,107 @@
+spinwheel.png
+	size: 2048, 512
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Light6
+	bounds: 1049, 201, 119, 267
+	offsets: 0, 7, 124, 274
+SPINWHEEL BONUS
+	bounds: 364, 83, 335, 385
+	offsets: 44, 38, 405, 447
+bright1
+	bounds: 1511, 141, 276, 112
+	rotate: 90
+bright2
+	bounds: 1397, 192, 276, 112
+	rotate: 90
+bright3
+	bounds: 1283, 98, 276, 112
+	rotate: 90
+bright4
+	bounds: 1169, 150, 276, 112
+	rotate: 90
+fire/fire1
+	bounds: 1049, 85, 99, 114
+	offsets: 20, 0, 141, 120
+fire/fire10
+	bounds: 1397, 30, 98, 46
+	offsets: 25, 63, 141, 120
+fire/fire11
+	bounds: 1497, 33, 92, 47
+	offsets: 27, 63, 141, 120
+fire/fire12
+	bounds: 840, 9, 84, 47
+	offsets: 32, 63, 141, 120
+fire/fire13
+	bounds: 2, 3, 83, 40
+	offsets: 34, 65, 141, 120
+fire/fire14
+	bounds: 87, 3, 82, 40
+	offsets: 35, 66, 141, 120
+fire/fire15
+	bounds: 685, 15, 83, 40
+	offsets: 36, 66, 141, 120
+fire/fire16
+	bounds: 171, 10, 83, 33
+	offsets: 37, 66, 141, 120
+fire/fire17
+	bounds: 1289, 4, 82, 33
+	offsets: 38, 67, 141, 120
+fire/fire18
+	bounds: 1591, 2, 75, 31
+	offsets: 45, 69, 141, 120
+fire/fire19
+	bounds: 1083, 4, 76, 29
+	offsets: 44, 71, 141, 120
+fire/fire2
+	bounds: 979, 26, 102, 57
+	offsets: 17, 60, 141, 120
+fire/fire20
+	bounds: 481, 3, 65, 26
+	offsets: 45, 73, 141, 120
+fire/fire3
+	bounds: 1496, 82, 106, 57
+	offsets: 17, 60, 141, 120
+fire/fire4
+	bounds: 1289, 39, 106, 57
+	offsets: 18, 61, 141, 120
+fire/fire5
+	bounds: 1604, 35, 105, 56
+	offsets: 19, 62, 141, 120
+fire/fire6
+	bounds: 381, 28, 98, 53
+	offsets: 21, 62, 141, 120
+fire/fire7
+	bounds: 280, 28, 99, 53
+	offsets: 22, 63, 141, 120
+fire/fire8
+	bounds: 481, 31, 101, 50
+	offsets: 21, 63, 141, 120
+fire/fire9
+	bounds: 584, 31, 99, 50
+	offsets: 24, 63, 141, 120
+glow_light_neo_small
+	bounds: 1397, 78, 112, 97
+	offsets: 8, 15, 128, 128
+	rotate: 90
+light BG
+	bounds: 1625, 92, 376, 73
+	offsets: 16, 163, 405, 447
+	rotate: 90
+ring
+	bounds: 701, 121, 346, 347
+	offsets: 37, 31, 405, 447
+ring glow
+	bounds: 2, 108, 360, 360
+	offsets: 27, 25, 405, 447
+small fire1
+	bounds: 701, 57, 137, 62
+small fire2
+	bounds: 1150, 34, 137, 62
+small fire3
+	bounds: 141, 44, 137, 62
+small fire4
+	bounds: 2, 44, 137, 62
+small fire5
+	bounds: 840, 57, 137, 62

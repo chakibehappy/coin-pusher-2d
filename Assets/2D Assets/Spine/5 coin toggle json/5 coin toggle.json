@@ -1,0 +1,101 @@
+{
+"skeleton": {
+	"hash": "0py+3LSKmIw",
+	"spine": "4.1.24",
+	"x": -260.54,
+	"y": -105.35,
+	"width": 506,
+	"height": 253.03,
+	"images": "./images/",
+	"audio": "F:/SLENCE/Work/Coin Pusher/UI animations/UI animations/Coin Toggle"
+},
+"bones": [
+	{ "name": "root", "x": -297.54, "y": 235.68 },
+	{ "name": "1 coin", "parent": "root", "x": 297.49, "y": -229.04 },
+	{ "name": "ball green", "parent": "1 coin", "x": -180.19, "y": -1.33 },
+	{ "name": "green", "parent": "1 coin", "length": 332.93, "x": -140.07, "y": -5.08 },
+	{ "name": "coin", "parent": "1 coin", "x": -75.98, "y": 37.56 }
+],
+"slots": [
+	{ "name": "Rectangle", "bone": "1 coin", "attachment": "Rectabgle" },
+	{ "name": "5 coin", "bone": "coin", "attachment": "5 coin" },
+	{ "name": "green bg", "bone": "green", "attachment": "green bg" },
+	{ "name": "green bg glow", "bone": "green", "attachment": "green bg glow" },
+	{ "name": "ball green", "bone": "ball green", "attachment": "ball green" },
+	{ "name": "ball green glow", "bone": "ball green", "attachment": "ball green", "blend": "additive" },
+	{ "name": "5 coins button off", "bone": "root", "attachment": "5 coins button off" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"5 coin": {
+				"5 coin": { "x": -4.89, "y": 36.99, "width": 113, "height": 133 }
+			},
+			"5 coins button off": {
+				"5 coins button off": { "x": 290.05, "y": -215.03, "width": 504, "height": 252 }
+			},
+			"ball green": {
+				"ball green": { "x": -2.3, "y": 0.87, "width": 94, "height": 93 }
+			},
+			"ball green glow": {
+				"ball green": { "x": -2.3, "y": 0.87, "width": 94, "height": 93 }
+			},
+			"green bg": {
+				"green bg": { "x": 130.09, "y": 4.62, "width": 485, "height": 141 }
+			},
+			"green bg glow": {
+				"green bg glow": { "x": 130.09, "y": 4.62, "width": 485, "height": 141 }
+			},
+			"Rectangle": {
+				"Rectabgle": { "x": -7.49, "y": 2.54, "width": 506, "height": 229 }
+			}
+		}
+	}
+],
+"animations": {
+	"OFF": {
+		"slots": {
+			"5 coins button off": {
+				"rgba": [
+					{ "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"ON": {
+		"slots": {
+			"5 coins button off": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"ball green glow": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.5, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				]
+			},
+			"green bg glow": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.4, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.6, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"ball green": {
+				"scale": [
+					{},
+					{ "time": 0.4333, "x": 1.433, "y": 1.433, "curve": "stepped" },
+					{ "time": 0.5333, "x": 1.433, "y": 1.433 },
+					{ "time": 1 }
+				]
+			}
+		}
+	}
+}
+}

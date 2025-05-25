@@ -1,0 +1,403 @@
+{
+"skeleton": {
+	"hash": "ZglYI4hSyVE",
+	"spine": "4.1.24",
+	"x": -417.71,
+	"y": -387.33,
+	"width": 901.5,
+	"height": 597.75,
+	"images": "./images/",
+	"audio": "F:/SLENCE/Work/Coin Pusher/Multiplier/Reward/Reward"
+},
+"bones": [
+	{ "name": "root", "x": 2.67, "y": 8.74, "scaleX": 0.5, "scaleY": 0.5 },
+	{ "name": "Base", "parent": "root", "x": 4.3, "y": -8.98 },
+	{ "name": "Reward", "parent": "Base", "length": 489.59, "x": 13.07, "y": 160.54 },
+	{ "name": "Sun", "parent": "Base", "x": 649.47, "y": 83.92 },
+	{ "name": "Moon", "parent": "Base", "x": -605.68, "y": 72.97 },
+	{ "name": "FX", "parent": "Base", "length": 296.26, "rotation": -90, "x": 1.02, "y": -23.42 },
+	{ "name": "FX Bright", "parent": "FX", "x": -115.49, "y": 4.72 },
+	{ "name": "Base3", "parent": "FX Bright", "length": 551.7, "rotation": 26.66, "x": 24.18, "y": 53.37 },
+	{ "name": "Base4", "parent": "FX Bright", "length": 645.28, "rotation": 52.41, "x": 14.04, "y": 169.02 },
+	{ "name": "Base5", "parent": "FX Bright", "length": 655.23, "rotation": -22.2, "x": -12.34, "y": -131.27 },
+	{ "name": "Base6", "parent": "FX Bright", "length": 724.38, "rotation": -48.41, "x": -0.17, "y": -238.81 },
+	{ "name": "Reward Text", "parent": "Reward", "length": 164.44, "rotation": -0.9, "x": -1.49, "y": 1.93 },
+	{ "name": "Reward Text2", "parent": "Reward", "length": 164.44, "rotation": -0.9, "x": -1.49, "y": 1.93 }
+],
+"slots": [
+	{ "name": "shadow", "bone": "FX", "attachment": "shadow" },
+	{ "name": "Bright1", "bone": "Base3", "attachment": "Bright1" },
+	{ "name": "Bright2", "bone": "Base6", "attachment": "Bright2" },
+	{ "name": "Bright3", "bone": "Base5", "attachment": "Bright3" },
+	{ "name": "Bright4", "bone": "Base4", "attachment": "Bright4" },
+	{ "name": "Reward FX1", "bone": "FX", "attachment": "Reward FX1" },
+	{ "name": "Reward FX2", "bone": "FX", "attachment": "Reward FX2" },
+	{ "name": "Reward FX3", "bone": "FX", "attachment": "Reward FX3" },
+	{ "name": "Base shape", "bone": "Reward", "attachment": "Base shape" },
+	{ "name": "Moon", "bone": "Moon", "attachment": "SUN" },
+	{ "name": "Sun", "bone": "Sun", "attachment": "Moon" },
+	{ "name": "Reward text", "bone": "Reward Text", "attachment": "Reward text" },
+	{ "name": "Reward text2", "bone": "Reward Text2", "color": "ffffff00", "attachment": "Reward text", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Base shape": {
+				"Base shape": { "x": 18.87, "y": -69.71, "width": 1525, "height": 439 }
+			},
+			"Bright1": {
+				"Bright1": {
+					"x": 206.04,
+					"y": -331.9,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 63.34,
+					"width": 439,
+					"height": 273
+				}
+			},
+			"Bright2": {
+				"Bright2": {
+					"x": 397.06,
+					"y": 45.88,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 138.41,
+					"width": 195,
+					"height": 197
+				}
+			},
+			"Bright3": {
+				"Bright3": {
+					"x": 359.79,
+					"y": -41.16,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 112.2,
+					"width": 162,
+					"height": 248
+				}
+			},
+			"Bright4": {
+				"Bright4": {
+					"x": 330.81,
+					"y": -2.39,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 37.59,
+					"width": 215,
+					"height": 169
+				}
+			},
+			"Moon": {
+				"SUN": { "x": 7.62, "y": -1.65, "width": 425, "height": 428 }
+			},
+			"Reward FX1": {
+				"Reward FX1": {
+					"x": 29.25,
+					"y": 1.91,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 90,
+					"width": 441,
+					"height": 310
+				}
+			},
+			"Reward FX2": {
+				"Reward FX2": {
+					"x": 223.25,
+					"y": 21.91,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 90,
+					"width": 396,
+					"height": 264
+				}
+			},
+			"Reward FX3": {
+				"Reward FX3": {
+					"x": 27.48,
+					"y": 3.94,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 90,
+					"width": 373,
+					"height": 146
+				}
+			},
+			"Reward text": {
+				"Reward text": { "x": 3.32, "y": -29.6, "rotation": 0.9, "width": 1114, "height": 315 }
+			},
+			"Reward text2": {
+				"Reward text": { "x": 3.32, "y": -29.6, "rotation": 0.9, "width": 1114, "height": 315 }
+			},
+			"shadow": {
+				"shadow": {
+					"x": 281.25,
+					"y": 55.41,
+					"scaleX": 3,
+					"scaleY": 3,
+					"rotation": 90,
+					"width": 601,
+					"height": 319
+				}
+			},
+			"Sun": {
+				"Moon": { "x": -13.03, "y": -1.09, "width": 568, "height": 557 }
+			}
+		}
+	}
+],
+"animations": {
+	"Idle": {
+		"slots": {
+			"Bright1": {
+				"rgba": [
+					{ "time": 0.4333, "color": "ffffffff" },
+					{ "time": 0.6667, "color": "ffffff85" },
+					{ "time": 0.9, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1.2667, "color": "ffffffff" },
+					{ "time": 1.5333, "color": "ffffff85" },
+					{ "time": 1.8333, "color": "ffffffff" }
+				]
+			},
+			"Bright3": {
+				"rgba": [
+					{ "time": 0.3, "color": "ffffffff" },
+					{ "time": 0.8667, "color": "ffffff47" },
+					{ "time": 1.8, "color": "ffffffff" }
+				]
+			},
+			"Reward FX1": {
+				"rgba": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.5667, "color": "ffffff00" },
+					{ "time": 1, "color": "fffffffe" },
+					{ "time": 1.5333, "color": "ffffff00" }
+				]
+			},
+			"Reward FX2": {
+				"rgba": [
+					{ "time": 0.1333, "color": "ffffffff" },
+					{ "time": 0.5, "color": "ffffff63" },
+					{ "time": 0.9, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1.0667, "color": "ffffffff" },
+					{ "time": 1.5, "color": "ffffff63" },
+					{ "time": 1.9, "color": "ffffffff" }
+				]
+			},
+			"Reward FX3": {
+				"rgba": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.5667, "color": "ffffff00" },
+					{ "time": 0.9, "color": "ffffffe1" },
+					{ "time": 1.2333, "color": "ffffff00" }
+				]
+			},
+			"Reward text2": {
+				"rgba": [
+					{ "time": 0.7667, "color": "ffffff00" },
+					{ "time": 0.9333, "color": "ffffffca" },
+					{ "time": 1.3333, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"Base": {
+				"scale": [
+					{},
+					{ "time": 1, "x": 1.04 },
+					{ "time": 2 }
+				]
+			},
+			"Moon": {
+				"rotate": [
+					{},
+					{ "time": 0.8, "value": 27.52 },
+					{ "time": 1.1667, "value": 8.68 },
+					{ "time": 2 }
+				]
+			},
+			"Sun": {
+				"rotate": [
+					{},
+					{ "time": 0.8, "value": -20.76 },
+					{ "time": 1.0333, "value": -13.57 },
+					{ "time": 2 }
+				]
+			},
+			"Base4": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": -11.53 },
+					{ "time": 0.5667, "value": 6.97 },
+					{ "time": 0.8, "value": 15.03 },
+					{ "time": 1.0667, "value": 0.48 },
+					{ "time": 1.3333, "value": 12.3 },
+					{ "time": 1.7333, "value": -7.08 },
+					{ "time": 2 }
+				]
+			},
+			"Base3": {
+				"rotate": [
+					{},
+					{ "time": 0.3667, "value": 3.67 },
+					{ "time": 0.7, "value": -0.99 },
+					{ "time": 0.8667, "value": -7.23 },
+					{ "time": 1.1667, "value": 7.75 },
+					{ "time": 1.5, "value": -7.23 },
+					{ "time": 2 }
+				]
+			},
+			"Base5": {
+				"rotate": [
+					{},
+					{ "time": 0.5333, "value": 10.16 },
+					{ "time": 0.8667, "value": -6.83 },
+					{ "time": 1.1333, "value": -2.51 },
+					{ "time": 1.4, "value": -15.24 },
+					{ "time": 2 }
+				]
+			},
+			"Base6": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 7.14 },
+					{ "time": 0.7, "value": -8.52 },
+					{ "time": 0.9333, "value": 4.4 },
+					{ "time": 1.3333, "value": -14.06 },
+					{ "time": 1.6, "value": 5.17 },
+					{ "time": 2 }
+				]
+			}
+		}
+	},
+	"Spawn": {
+		"slots": {
+			"Reward FX1": {
+				"rgba": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"Base": {
+				"scale": [
+					{ "time": 0.2333 },
+					{ "time": 0.3, "x": 0.868 },
+					{ "time": 0.3667, "x": 1.002 },
+					{ "time": 0.4667 }
+				]
+			},
+			"Base3": {
+				"translate": [
+					{ "y": 5.75 },
+					{ "time": 0.2333 }
+				],
+				"scale": [
+					{ "y": 1.099 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Base4": {
+				"translate": [
+					{ "y": 17.2 },
+					{ "time": 0.2333 }
+				],
+				"scale": [
+					{ "y": 1.099 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Base5": {
+				"translate": [
+					{ "y": -12.53 },
+					{ "time": 0.2333 }
+				],
+				"scale": [
+					{ "y": 1.099 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Base6": {
+				"translate": [
+					{ "y": -23.18 },
+					{ "time": 0.2333 }
+				],
+				"scale": [
+					{ "y": 1.099 },
+					{ "time": 0.2333 }
+				]
+			},
+			"FX": {
+				"scale": [
+					{ "y": 0 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Moon": {
+				"translate": [
+					{ "x": 603.61 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Reward": {
+				"scale": [
+					{ "x": 0.002 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Reward Text": {
+				"rotate": [
+					{ "time": 0.2333 },
+					{ "time": 0.3, "value": -5.39 },
+					{ "time": 0.4333, "value": 0.11 },
+					{ "time": 0.5 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.1, "x": 0.65 },
+					{ "time": 0.2333 },
+					{ "time": 0.3, "x": 1.05 },
+					{ "time": 0.3333, "x": 0.997 },
+					{ "time": 0.4333, "x": 1.148 },
+					{ "time": 0.5 }
+				]
+			},
+			"Sun": {
+				"translate": [
+					{ "x": -637.65 },
+					{ "time": 0.2333 }
+				]
+			},
+			"Reward Text2": {
+				"rotate": [
+					{ "time": 0.2333 },
+					{ "time": 0.3, "value": -5.39 },
+					{ "time": 0.4333, "value": 0.11 },
+					{ "time": 0.5 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.1, "x": 0.65 },
+					{ "time": 0.2333 },
+					{ "time": 0.3, "x": 1.05 },
+					{ "time": 0.3333, "x": 0.997 },
+					{ "time": 0.4333, "x": 1.148 },
+					{ "time": 0.5 }
+				]
+			},
+			"FX Bright": {
+				"scale": [
+					{ "x": 0.029, "curve": "stepped" },
+					{ "time": 0.4, "x": 0.029 },
+					{ "time": 0.4667 },
+					{ "time": 0.5667, "x": 1.188 }
+				]
+			}
+		}
+	}
+}
+}

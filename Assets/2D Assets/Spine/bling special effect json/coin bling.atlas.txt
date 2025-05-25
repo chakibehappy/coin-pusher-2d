@@ -1,0 +1,17 @@
+coin bling.png
+	size: 1024, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+bright1
+	bounds: 542, 182, 56, 57
+	offsets: 1, 1, 58, 59
+bright2
+	bounds: 542, 241, 68, 68
+	offsets: 1, 1, 70, 70
+dust1
+	bounds: 2, 311, 550, 307
+	offsets: 2, 1, 554, 309
+dust2
+	bounds: 2, 2, 538, 307
+	offsets: 2, 1, 543, 309

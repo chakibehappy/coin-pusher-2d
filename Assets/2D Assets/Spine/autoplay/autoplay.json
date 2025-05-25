@@ -1,0 +1,153 @@
+{
+"skeleton": {
+	"hash": "nrz3ffnZpYM",
+	"spine": "4.1.24",
+	"x": -162.29,
+	"y": -182.87,
+	"width": 335,
+	"height": 356,
+	"images": "./images/",
+	"audio": "F:/SLENCE/Work/Coin Pusher/UI animations/UI animations/Autoplay"
+},
+"bones": [
+	{ "name": "root", "x": -202.29, "y": 194.13 },
+	{ "name": "Autoplay On", "parent": "root", "x": 212.67, "y": -199.47 },
+	{ "name": "circle arrow", "parent": "Autoplay On", "length": 136.65, "x": -6.53, "y": 13.21 },
+	{ "name": "glow", "parent": "Autoplay On", "x": -2.34, "y": 41.71 },
+	{ "name": "on glow", "parent": "Autoplay On", "x": -4.01, "y": -127.63 }
+],
+"slots": [
+	{ "name": "dark green", "bone": "glow", "attachment": "dark green" },
+	{ "name": "glow green", "bone": "glow", "attachment": "glow green" },
+	{ "name": "circle arrow", "bone": "circle arrow", "attachment": "circle arrow" },
+	{ "name": "arrow", "bone": "Autoplay On", "attachment": "arrow" },
+	{ "name": "layout", "bone": "Autoplay On", "attachment": "layout" },
+	{ "name": "ON shadow", "bone": "Autoplay On", "attachment": "ON shadow" },
+	{ "name": "ON dark green", "bone": "on glow", "attachment": "ON dark green" },
+	{ "name": "ON glow green", "bone": "on glow", "attachment": "ON glow green" },
+	{ "name": "Autoplay off", "bone": "root", "attachment": "Autoplay off" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"arrow": {
+				"arrow": { "x": 2.33, "y": 12.97, "width": 68, "height": 61 }
+			},
+			"Autoplay off": {
+				"Autoplay off": { "x": 208.5, "y": -207.51, "width": 309, "height": 334 }
+			},
+			"circle arrow": {
+				"circle arrow": { "x": 3.86, "y": 0.76, "width": 174, "height": 177 }
+			},
+			"dark green": {
+				"dark green": { "x": -3.83, "y": -31.74, "width": 295, "height": 297 }
+			},
+			"glow green": {
+				"glow green": { "x": -3.83, "y": -31.74, "width": 295, "height": 297 }
+			},
+			"layout": {
+				"layout": { "x": -5.17, "y": 0.47, "width": 335, "height": 356 }
+			},
+			"ON dark green": {
+				"ON dark green": { "x": 2.35, "y": 2.1, "width": 158, "height": 72 }
+			},
+			"ON glow green": {
+				"ON glow green": { "x": 2.35, "y": 2.1, "width": 158, "height": 72 }
+			},
+			"ON shadow": {
+				"ON shadow": { "x": -1.67, "y": -122.53, "width": 158, "height": 72 }
+			}
+		}
+	}
+],
+"animations": {
+	"OFF": {
+		"slots": {
+			"arrow": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"circle arrow": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"dark green": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"glow green": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"layout": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"ON dark green": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"ON glow green": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"ON shadow": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			}
+		}
+	},
+	"ON": {
+		"slots": {
+			"Autoplay off": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"glow green": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.5, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				]
+			},
+			"ON glow green": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.5, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"circle arrow": {
+				"rotate": [
+					{ "value": 359 },
+					{ "time": 1 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.5333, "x": 1.127, "y": 1.127 },
+					{ "time": 1 }
+				]
+			},
+			"Autoplay On": {
+				"scale": [
+					{},
+					{ "time": 0.5, "x": 1.118, "y": 1.118 },
+					{ "time": 1 }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,45 @@
+elephant.png
+	size: 1024, 256
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+BASE
+	bounds: 2, 39, 210, 337
+	rotate: 90
+arm L
+	bounds: 501, 203, 60, 44
+	offsets: 0, 0, 61, 44
+arm R
+	bounds: 623, 175, 74, 62
+	rotate: 90
+ball
+	bounds: 341, 91, 158, 158
+ball shadow
+	bounds: 341, 22, 101, 67
+	offsets: 1, 2, 103, 71
+body
+	bounds: 576, 43, 109, 119
+ear
+	bounds: 477, 12, 85, 82
+	rotate: 180
+foot bot L
+	bounds: 564, 6, 44, 39
+	rotate: 90
+foot bot R
+	bounds: 687, 119, 52, 54
+	offsets: 0, 0, 53, 54
+foot top L
+	bounds: 687, 195, 50, 54
+	offsets: 0, 1, 50, 55
+foot top R
+	bounds: 682, 27, 61, 60
+	rotate: 90
+head
+	bounds: 501, 95, 154, 121
+	rotate: 90
+tail
+	bounds: 409, 2, 53, 58
+	rotate: 180
+tusk
+	bounds: 2, 4, 23, 33
+	offsets: 1, 0, 24, 34
