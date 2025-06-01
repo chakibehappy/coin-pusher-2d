@@ -19,22 +19,22 @@ public static class StringHelper
     {
         if (currency.ToLower() == "idr")
         {
-            return number.ToString("#,0", System.Globalization.CultureInfo.InvariantCulture).Replace(",", ".");
+            return number.ToString("#,0.##", System.Globalization.CultureInfo.InvariantCulture).Replace(",", ".");
         }
         else
         {
-            return number.ToString("#,0", System.Globalization.CultureInfo.InvariantCulture);
+            return number.ToString("#,0.##", System.Globalization.CultureInfo.InvariantCulture);
         }
     }
-    public static string MoneyFormat(long number, string currency)
+    public static string MoneyFormat(decimal number, string currency)
     {
         if (currency.ToLower() == "idr")
         {
-            return number.ToString("#,0", System.Globalization.CultureInfo.InvariantCulture).Replace(",", ".");
+            return number.ToString("#,0.##", System.Globalization.CultureInfo.InvariantCulture).Replace(",", ".");
         }
         else
         {
-            return number.ToString("#,0", System.Globalization.CultureInfo.InvariantCulture);
+            return number.ToString("#,0.##", System.Globalization.CultureInfo.InvariantCulture);
         }
     }
 

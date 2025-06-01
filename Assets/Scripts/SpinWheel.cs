@@ -67,18 +67,6 @@ public class SpinWheel : MonoBehaviour
         }
 
 
-        //segmentLabels = new List<SpinwheelLabel>();
-        //for (int i = 0; i < items.Count; i++)
-        //{
-        //    segmentLabels.Add(new SpinwheelLabel() 
-        //    { 
-        //        name = items[i].name, 
-        //        multiplier = items[i].multiplier 
-        //    });
-        //}
-
-        //segmentLabels = segmentLabels.OrderBy(x => Random.value).ToList();
-
         for (int i = 0; i < segmentLabels.Count; i++)
         {
             spinItemImages[i].sprite = GetSpinwheelSprite(segmentLabels[i].name);

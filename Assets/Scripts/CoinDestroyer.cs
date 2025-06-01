@@ -40,7 +40,7 @@ public class CoinDestroyer : MonoBehaviour
             if (coin.isDropped)
             {
                 //Debug.Log("Intended to Fall");
-                ShowMultiplierText(spawnPos, coin.multiplier, Color.white);
+                ShowMultiplierText(spawnPos, GetMultiplierText(coin.multiplier), Color.white);
             }
             else
             {
@@ -59,7 +59,18 @@ public class CoinDestroyer : MonoBehaviour
         if (other.CompareTag("Gem") || other.CompareTag("Gold"))
         {
             BonusDrop bonus = other.GetComponent<BonusDrop>();
-            ShowMultiplierText(spawnPos, bonus.multiplier, Color.green, other.gameObject);
+            ShowMultiplierText(spawnPos, GetMultiplierText(bonus.multiplier), Color.green, other.gameObject);
+        }
+
+        if (other.CompareTag("BonusCoin"))
+        {
+            Color purple = new(255f, 0f, 255f, 1f);
+            ShowMultiplierText(spawnPos, "BONUS", purple);
+            totalCoinFall++;
+            if (isCheckingCoinFall && !startCheck)
+            {
+                StartCoroutine(CheckCoinFallIE());
+            }
         }
     }
 
@@ -73,12 +84,11 @@ public class CoinDestroyer : MonoBehaviour
         isCheckingCoinFall = startCheck = false;
     }
 
-    void ShowMultiplierText(Vector3 spawnPos, float multiplier, Color color, GameObject obj = null)
+
+    string GetMultiplierText(float multiplier)
     {
-        GameObject textObj = Instantiate(multiplierTextPrefab, canvas);
-        textObj.transform.localPosition = spawnPos;
         string multiplierText;
-        if(multiplier < 0.1f)
+        if (multiplier < 0.1f)
         {
             multiplierText = multiplier.ToString("F2");
         }
@@ -86,7 +96,16 @@ public class CoinDestroyer : MonoBehaviour
         {
             multiplierText = multiplier < 1 ? multiplier.ToString("F1") : multiplier.ToString();
         }
-        textObj.GetComponent<TextMeshProUGUI>().text = multiplierText + "x";
+        return multiplierText;
+    }
+
+
+    void ShowMultiplierText(Vector3 spawnPos, string multiplierText, Color color, GameObject obj = null)
+    {
+        GameObject textObj = Instantiate(multiplierTextPrefab, canvas);
+        textObj.transform.localPosition = spawnPos;
+
+        textObj.GetComponent<TextMeshProUGUI>().text = multiplierText + (multiplierText != "BONUS" ? "x" : "");
         textObj.GetComponent<TextMeshProUGUI>().color = color;
 
         textObj.transform.DOMoveY(Random.Range(midEndPosY.position.y, endPosY.position.y), 0.5f).SetEase(Ease.Linear).OnComplete(() =>

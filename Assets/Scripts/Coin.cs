@@ -34,7 +34,7 @@ public class Coin : MonoBehaviour
         StartCoroutine(moveCoroutine);
     }
 
-    public void MoveForward(Vector3 maxTargetPos)
+    public void MoveForward(Vector3 maxTargetPos, bool isKickBack = false, float kickbackMultiplier = 0.75f)
     {
         Vector3 direction = Vector3.back;
         Vector3 desiredTarget = coinRb.position + direction * (diameter/4);
@@ -45,7 +45,7 @@ public class Coin : MonoBehaviour
             desiredTarget.z = maxTargetPos.z;
         }
 
-        MoveToPosition(desiredTarget, 0.5f);
+        MoveToPosition(desiredTarget, 0.5f, isKickBack, kickbackMultiplier);
     }
 
     public void MoveToFrontPosition(Vector3 maxTargetPos)
@@ -55,7 +55,7 @@ public class Coin : MonoBehaviour
     }
 
 
-    void MoveToPosition(Vector3 movePoint, float force = 10f)
+    void MoveToPosition(Vector3 movePoint, float force = 10f, bool isKickBack = false, float kickbackMultiplier = 0.75f)
     {
         coinRb.isKinematic = false;
         if(moveCoroutine != null)
@@ -63,12 +63,12 @@ public class Coin : MonoBehaviour
             StopCoroutine(moveCoroutine);
             moveCoroutine = null;
         }
-        moveCoroutine = MoveToPoint(movePoint, force);
+        moveCoroutine = MoveToPoint(movePoint, force, isKickBack, kickbackMultiplier);
         StartCoroutine(moveCoroutine);
     }
 
 
-    private IEnumerator MoveToPoint(Vector3 targetPoint, float force)
+    private IEnumerator MoveToPoint(Vector3 targetPoint, float force, bool isKickBack = false, float kickbackMultiplier = 0.75f)
     {
         float threshold = 0.05f;
         while (Vector3.Distance(coinRb.position, targetPoint) > threshold)
@@ -76,7 +76,22 @@ public class Coin : MonoBehaviour
             coinRb.MovePosition(Vector3.MoveTowards(coinRb.position, targetPoint, Time.fixedDeltaTime * force));
             yield return null;
         }
-        coinRb.MovePosition(targetPoint);
+
+        if (isKickBack)
+        {
+            float kickbackDistance = diameter * kickbackMultiplier;
+            Vector3 kickbackTarget = targetPoint + Vector3.forward * kickbackDistance;
+            while (Vector3.Distance(coinRb.position, kickbackTarget) > threshold)
+            {
+                coinRb.MovePosition(Vector3.MoveTowards(coinRb.position, kickbackTarget, Time.fixedDeltaTime * force));
+                yield return null;
+            }
+            coinRb.MovePosition(kickbackTarget);
+        }
+        else
+        {
+            coinRb.MovePosition(targetPoint);
+        }
     }
 
     private IEnumerator FallToPoint(Vector3 targetPoint, float force)
@@ -97,13 +112,13 @@ public class Coin : MonoBehaviour
         coinRb.MovePosition(new Vector3(coinRb.position.x, coinRb.position.y, targetPoint.z));
     }
 
-    public void MoveForwardByForce(float force = 2f)
-    {
-        if (coinRb == null || Camera.main == null) return;
+    //public void MoveForwardByForce(float force = 2f)
+    //{
+    //    if (coinRb == null || Camera.main == null) return;
 
-        Vector3 forceDirection = -Camera.main.transform.forward * force;
-        coinRb.AddForce(forceDirection, ForceMode.Impulse);
-    }
+    //    Vector3 forceDirection = -Camera.main.transform.forward * force;
+    //    coinRb.AddForce(forceDirection, ForceMode.Impulse);
+    //}
 }
 
 [System.Serializable]

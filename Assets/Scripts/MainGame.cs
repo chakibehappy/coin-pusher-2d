@@ -56,6 +56,8 @@ public class MainGame : MonoBehaviour
     private string[] spinwheelAnimNames = new string[] {
         "Start", "Loop", "End"
     };
+    [SerializeField] private List<GameObject> spinwheelItems;
+    [SerializeField] private float delaySpinwheelItem = 0.5f;
 
     [SerializeField] private float minForwardForce = 2.5f;
     [SerializeField] private float maxForwardForce = 3.5f;
@@ -82,6 +84,8 @@ public class MainGame : MonoBehaviour
     BetResponse currentBetResponse;
 
     public int minTresholdCoinCount = 100;
+    public int maxTresholdCoinCount = 160;
+    public int coinToReduceCount = 10;
 
     public GameObject bonusText, freeCoinText;
     public float delayShowingText = 0.5f;
@@ -90,6 +94,8 @@ public class MainGame : MonoBehaviour
     private void Start()
     {
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Coin"), LayerMask.NameToLayer("Coin"), true);
+        // Simulate kickback on back coins
+        StartCoroutine(PusherBackAndForthIE());
 
         spinWheelUI.gameObject.SetActive(false);
         PlayCharacterAndOrbAnimationIdle();
@@ -178,6 +184,29 @@ public class MainGame : MonoBehaviour
         SpineHelper.PlayAnimation(spinwheelSpine, spinwheelAnimNames[1], true);
         yield return StartCoroutine(spinWheel.StartSpinIE(result));
 
+        spinwheelItems.ForEach( s => s.transform.localScale = Vector3.zero);
+        if (drop_result == "diamond")
+        {
+            spinwheelItems[0].SetActive(true);
+        }
+        else if (drop_result == "blackhole")
+        {
+            spinwheelItems[1].SetActive(true);
+        }
+        else if (drop_result == "gold_bar")
+        {
+            spinwheelItems[2].SetActive(true);
+        }
+        else if (drop_result == "extra_drop")
+        {
+            spinwheelItems[3].SetActive(true);
+        }
+        spinwheelItems.ForEach(s => {
+            if (s.activeInHierarchy)
+                s.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.InOutSine);
+        });
+        yield return new WaitForSeconds(delaySpinwheelItem + 0.25f);
+
         SpineHelper.PlayAnimation(spinwheelSpine, spinwheelAnimNames[2], false);
         spinWheelObj.DOScale(Vector3.zero, 0.5f).SetEase(Ease.Linear);
         spinWheelUI.GetComponent<Image>().DOFade(0, 0.5f);
@@ -185,6 +214,7 @@ public class MainGame : MonoBehaviour
 
         PlayCharacterAndOrbAnimationIdle(false);
         spinWheelUI.gameObject.SetActive(false);
+        spinwheelItems.ForEach(s => s.SetActive(false));
 
         if (drop_result == "diamond")
         {
@@ -279,10 +309,42 @@ public class MainGame : MonoBehaviour
     }
 
 
-    IEnumerator LaunchingCoinsIE(int coinCount, int bonusCoinCount = 0)
+    IEnumerator LaunchingCoinsIE(int coinCount)
     {
         StartCoroutine(PlayCharacterAndOrbAnimationLaunchIE());
         Audio.PlaySFX(coinCount == 1 ? 0 : 1);
+        
+        var goldCoins = new List<GameObject>();
+        var silverCoins = new List<GameObject>();
+        var copperCoins = new List<GameObject>();
+        var bonusCoins = new List<GameObject>();
+
+        foreach (var coinObj in coinsOnPlatform)
+        {
+            if (coinObj == null) continue;
+            var coin = coinObj.GetComponent<Coin>();
+            if (coin == null) continue;
+            switch (coin.Value.name)
+            {
+                case "Gold":
+                    goldCoins.Add(coinObj);
+                    break;
+                case "Silver":
+                    silverCoins.Add(coinObj);
+                    break;
+                case "Copper":
+                    copperCoins.Add(coinObj);
+                    break;
+                case "Bonus":
+                    bonusCoins.Add(coinObj);
+                    break;
+            }
+        }
+
+        int bonusCoinCount = bonusCoins.Count;
+        int goldCoinCount = goldCoins.Count;
+        int silverCoinCount = silverCoins.Count;
+        int copperCoinCount = copperCoins.Count;
 
         for (int i = 0; i < coinCount; i++)
         {
@@ -291,17 +353,61 @@ public class MainGame : MonoBehaviour
                 0,
                 Random.Range(-0.1f, 0.1f)
             );
-            
-            GameObject coinObj = Instantiate(coinPrefab[Random.Range(0, 3)], orbPosition.position + randomOffset, Quaternion.identity);
+
+            // check what coin to launch in, from bonus, gold, cooper and then silver or else is random
+            int coinIndex;
+            if (bonusCoinCount < 2)
+            {
+                coinIndex = 3;
+                bonusCoinCount++;
+            }
+            else
+            {
+                // Debug.Log(Mathf.RoundToInt(coinsOnPlatform.Count * coinSpawner.coins[2].spawnPercentage * 0.01f));
+                if (goldCoinCount < Mathf.RoundToInt(coinsOnPlatform.Count * coinSpawner.coins[2].spawnPercentage * 0.01f))
+                {
+                    coinIndex = 2;
+                    goldCoinCount++;
+                }
+                else
+                {
+                    if (copperCoinCount < Mathf.RoundToInt(coinsOnPlatform.Count * coinSpawner.coins[0].spawnPercentage * 0.01f))
+                    {
+                        coinIndex = 0;
+                        copperCoinCount++;
+                    }
+                    else
+                    {
+                        if (silverCoinCount < Mathf.RoundToInt(coinsOnPlatform.Count * coinSpawner.coins[1].spawnPercentage * 0.01f))
+                        {
+                            coinIndex = 1;
+                            silverCoinCount++;
+                        }
+                        else
+                        {
+                            coinIndex = Random.Range(0, coinPrefab.Count);
+                        }
+                    }
+                }
+            }
+            GameObject coinObj = Instantiate(coinPrefab[coinIndex], orbPosition.position + randomOffset, Quaternion.identity);
             coinObj.layer = LayerMask.NameToLayer("Coin");
             Rigidbody rb = coinObj.GetComponent<Rigidbody>();
             yield return null;
             coinObj.GetComponent<Coin>().isSpawnedByPlayer = true;
+            
             Vector3 forceDirection =
                 -orbPosition.forward * Random.Range(minForwardForce, maxForwardForce) +
                 orbPosition.up * Random.Range(minUpwardForce, maxUpwardForce) +
                 orbPosition.right * Random.Range(-sidewaysForceRange, sidewaysForceRange);
             
+            if(coinIndex == 3)
+            {
+                forceDirection = -orbPosition.forward * maxForwardForce +
+                    orbPosition.up * maxUpwardForce +
+                    orbPosition.right * Random.Range(-sidewaysForceRange, sidewaysForceRange);
+            }
+
             rb.AddForce(forceDirection, ForceMode.Impulse);
             Vector3 randomTorque = new Vector3(Random.Range(-10f, 10f), 0, 0);
             rb.AddTorque(randomTorque, ForceMode.Impulse);
@@ -347,16 +453,10 @@ public class MainGame : MonoBehaviour
                 .ThenByDescending(coin => coin.transform.position.y)
                 .ToList();
 
-            //List<GameObject> bonusCoins = coinsOnPlatform
-            //    .Where(coin => coin != null && Mathf.Abs(coin.transform.position.z - frontZ) < margin)
-            //    .OrderBy(coin => coin.transform.position.z)
-            //    .ThenByDescending(coin => coin.transform.position.y)
-            //    .ToList();
-
-            //List<GameObject> platformBonusCoins = coinsOnPlatform.FindAll(c => c != null && c.GetComponent<Coin>().Value.name == "Bonus");
-            //List<GameObject> frontBonusCoins = frontRowCoins.FindAll(c => c.GetComponent<Coin>().Value.name == "Bonus");
-            //List<GameObject> restOfBonusCoins = platformBonusCoins.Where(c => !frontBonusCoins.Contains(c)).ToList();
-
+            List<GameObject> bonusCoins = coinsOnPlatform.FindAll(c => c != null && c.GetComponent<Coin>().Value.name == "Bonus");
+            bonusCoins = bonusCoins.Where(coin => coin != null)
+                .OrderBy(coin => coin.transform.position.z)
+                .ThenByDescending(coin => coin.transform.position.y).ToList();
 
             List<GameObject> coinsToRemove = new();
 
@@ -375,7 +475,7 @@ public class MainGame : MonoBehaviour
                 yield return null;
             }
 
-            if (currentBetResponse.data.total_win > 0)
+            if (float.Parse(currentBetResponse.data.total_win) > 0)
             {
                 if (coinFallCount > 0)
                 {
@@ -383,9 +483,10 @@ public class MainGame : MonoBehaviour
                     coinDestroyer.isCheckingCoinFall = true;
                     for (int i = 0; i < coinFallCount; i++)
                     {
+                        if (coinResult[i] == null) continue;
                         Coin coin = coinResult[i].GetComponent<Coin>();
                         coinsToRemove.Add(coinResult[i]);
-                        coin.DropingDown(coinFallingPoint.position, 0.75f);
+                        coin.DropingDown(coinFallingPoint.position, 1.5f);
                         yield return null;
                     }
 
@@ -406,7 +507,8 @@ public class MainGame : MonoBehaviour
                             {
                                 if (coin.stackLevel <= 2 && !coin.isSpawnedByPlayer)
                                 {
-                                    coin.MoveForward(frontColliderPoint.position);
+                                    if(!coinSpawner.IsOnBackArea(coinsOnPlatform[i]))
+                                        coin.MoveForward(frontColliderPoint.position, false);
                                 }
                             }
                             else
@@ -415,6 +517,17 @@ public class MainGame : MonoBehaviour
                             }
                             coinsOnPlatform[i].GetComponent<Rigidbody>().isKinematic = isFrontCoin;
                         }
+                    }
+                }
+
+                if (currentBetResponse.data.game_result.result.itemDrops.Count > 0)
+                {
+                    if (bonusCoins.Count > 0)
+                    {
+                        bonusCoins[0].GetComponent<Coin>().DropingDown(coinFallingPoint.position, 5f);
+                        frontRowCoins.Remove(bonusCoins[0]);
+                        coinsOnPlatform.Remove(bonusCoins[0]);
+                        yield return null;
                     }
                 }
 
@@ -427,10 +540,11 @@ public class MainGame : MonoBehaviour
 
                 if(currentBetResponse.data.game_result.result.itemDrops.Count > 0)
                 {
-                    bonusText.SetActive(true);
-                    bonusText.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), delayShowingText, 1).SetEase(Ease.Linear);
-                    yield return new WaitForSeconds(delayShowingText);
-                    bonusText.SetActive(false);
+                    //bonusText.SetActive(true);
+                    //bonusText.transform.DOPunchScale(new Vector3(0.15f, 0.15f, 0.15f), delayShowingText, 1).SetEase(Ease.Linear);
+                    //yield return new WaitForSeconds(delayShowingText);
+                    //bonusText.SetActive(false);
+                    
                     string drop_result = currentBetResponse.data.game_result.result.itemDrops[0];
                     spinWheel.FillSpinwheel(currentBetResponse.data.game_result.result.spinWheelData.items);
                     yield return StartCoroutine(ShowSpinWheelIE(drop_result));
@@ -445,12 +559,41 @@ public class MainGame : MonoBehaviour
                     int coinToBeSpawned = coinSpawner.maxCoins - coinsOnPlatform.Count;
                     coinSpawner.SpawnCoins(coinToBeSpawned);
                 }
+                else
+                {
+                    if (coinsOnPlatform.Count >= maxTresholdCoinCount)
+                    {
+                        API.Log("Coins is too much, more than " + maxTresholdCoinCount);
+                        int removedCount = 0;
+                        // Use a reverse loop or a separate list to avoid index issues
+                        for (int i = coinsOnPlatform.Count - 1; i >= 0; i--)
+                        {
+                            GameObject coinObj = coinsOnPlatform[i];
+                            if (coinObj != null)
+                            {
+                                Coin coin = coinObj.GetComponent<Coin>();
+                                bool isMiddleBaseCoin = coinSpawner.IsOnMiddleArea(coinObj) && coin.stackLevel == 0;
+
+                                if (isMiddleBaseCoin)
+                                {
+                                    coinsOnPlatform.RemoveAt(i);
+                                    Destroy(coinObj);           
+                                    removedCount++;
+
+                                    if (removedCount >= coinToReduceCount)
+                                        break;
+                                }
+                            }
+                        }
+                        API.Log($"Removed {removedCount} base coins from middle area.");
+                    }
+                }
             }
 
             // Recalculate stack levels
             coinSpawner.RecalculateCoinStacks(coinsOnPlatform);
 
-            float totalWin = currentBetResponse.data.total_win;
+            float totalWin = float.Parse(currentBetResponse.data.total_win);
             if (totalWin > 0)
             {
                 Audio.PlaySFX(6);
@@ -507,17 +650,16 @@ public class MainGame : MonoBehaviour
         DOTween.To(() => startValue, x => startValue = x, endValue, duration).OnUpdate(() =>
         {
             txtWinningNumber.text = menuManager.playerCurrency + " " + StringHelper.MoneyFormat(startValue, menuManager.playerCurrency);
-            //txtWinningNumber.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = menuManager.playerCurrency + " " + StringHelper.MoneyFormat(startValue);
-            //txtWinningNumber.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = menuManager.playerCurrency + " " + StringHelper.MoneyFormat(startValue);
         });
         yield return new WaitForSeconds(duration);
     }
 
     private List<GameObject> SplitMultiplier(float totalMultiplier)
     {
+        //TODO: Change the logic to drop all the front coins first later
+
         string val = totalMultiplier.ToString("F2"); 
         float cleaned = float.Parse(val);
-        // Debug.Log(cleaned);
 
         List<GameObject> results = new();
 
@@ -622,4 +764,36 @@ public class MainGame : MonoBehaviour
         return results;
     }
 
+
+    IEnumerator PusherBackAndForthIE()
+    {
+        while (true)
+        {
+            while (!pusher.isPushing)
+            {
+                yield return null;
+            }
+            int index = 0;
+            for (int i = 0; i < coinsOnPlatform.Count; i++)
+            {
+                // limit only 15 coins for now
+                if (coinsOnPlatform[i] != null && index < 15)
+                {
+                    float kickbackMultiplier = 0.5f;
+                    if (index < 10 && index >= 5)
+                        kickbackMultiplier = 0.75f;
+                    else if (index < 15 && index >= 10)
+                        kickbackMultiplier = 1f;
+                    Coin coin = coinsOnPlatform[i].GetComponent<Coin>();
+                    bool isBackCoin = coinSpawner.IsOnBackArea(coinsOnPlatform[i]);
+                    if (isBackCoin)
+                    {
+                        coin.MoveForward(frontColliderPoint.position, true, kickbackMultiplier);
+                        index++;
+                    }
+                }
+            }
+            yield return null;
+        }
+    }
 }

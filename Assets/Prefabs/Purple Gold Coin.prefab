@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1514714296822239174}
   m_Layer: 0
   m_Name: Purple Gold Coin
-  m_TagString: Coin
+  m_TagString: BonusCoin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,9 +62,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -256,7 +253,7 @@ PrefabInstance:
       value: -0.00022
       objectReference: {fileID: 0}
     - target: {fileID: 7033953564201407253, guid: 80bd26369e463684a94fe1c5148fb882, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6b3338e213b8ad249ab4095d57f04429, type: 2}
     m_RemovedComponents: []

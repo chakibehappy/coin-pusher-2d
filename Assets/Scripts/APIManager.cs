@@ -268,7 +268,7 @@ public class APIManager : MonoBehaviour
         {
             EncryptedResponse response = JsonUtility.FromJson<EncryptedResponse>(encryptRequest.downloadHandler.text);
             encryptedJson = $"{{\"data\":\"{response.encrypted_data}\"}}";
-            Log(encryptedJson);
+            // Log(encryptedJson);
         }
 #endif
         using UnityWebRequest betRequest = new(GetSendBetDataAPI(), "POST");
@@ -507,7 +507,7 @@ public class BetData
 {
     public int round_id;
     public GameResult game_result;
-    public float total_win;
+    public string total_win;
     public float total_amount;
     public string balance;
 }

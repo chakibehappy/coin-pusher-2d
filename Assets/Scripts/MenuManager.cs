@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
 
     int selectedCoinCount;
 
-    [SerializeField] private long totalPlayerBalance = 500000;
+    [SerializeField] private decimal totalPlayerBalance = 500000;
     [SerializeField] private TextMeshProUGUI txtPlayerBalance;
 
     [Header("Launch Indikator")]
@@ -140,7 +140,7 @@ public class MenuManager : MonoBehaviour
 
     public void ChangePlayerBallance(string balance)
     {
-        totalPlayerBalance = Convert.ToInt64(balance);
+        totalPlayerBalance = decimal.Parse(balance);
         txtPlayerBalance.text = playerCurrency + " " + StringHelper.MoneyFormat(totalPlayerBalance, playerCurrency);
     }
 

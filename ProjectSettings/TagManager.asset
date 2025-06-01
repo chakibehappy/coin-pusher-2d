@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Gem
   - Gold
+  - BonusCoin
   layers:
   - Default
   - TransparentFX

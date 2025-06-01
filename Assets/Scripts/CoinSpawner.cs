@@ -29,7 +29,6 @@ public class CoinSpawner : MonoBehaviour
 
     void Start()
     {
-
         // Get platform's top Y position
         Collider platformCollider = GetComponent<Collider>();
         platformTopY = platformCollider ? platformCollider.bounds.max.y : transform.position.y;
@@ -165,6 +164,30 @@ public class CoinSpawner : MonoBehaviour
         }
         return obj.transform.position.z <= minZ.position.z + (coinDiameter);
     }
+
+    public bool IsOnBackArea(GameObject obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        return obj.transform.position.z >= maxZ.position.z - (coinDiameter)/2;
+    }
+
+    public bool IsOnMiddleArea(GameObject obj)
+    {
+        if (obj == null) return false;
+        float frontZ = minZ.position.z + coinDiameter;
+        float backZ = maxZ.position.z - coinDiameter / 2f;
+
+        float oneThird = (backZ - frontZ) / 3f;
+        float middleStartZ = frontZ + oneThird;       
+        float middleEndZ = backZ - oneThird;          
+        float objZ = obj.transform.position.z;
+
+        return objZ > middleStartZ && objZ < middleEndZ;
+    }
+
 
     void OnCollisionEnter(Collision collision)
     {

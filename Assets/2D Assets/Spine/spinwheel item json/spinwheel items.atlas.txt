@@ -1,0 +1,52 @@
+spinwheel items.png
+	size: 2048, 1024
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Cash +
+	bounds: 1190, 2, 230, 107
+	offsets: 0, 7, 232, 126
+bg light
+	bounds: 420, 377, 318, 352
+	offsets: 232, 344, 821, 813
+bg light 2
+	bounds: 2, 345, 416, 384
+	offsets: 50, 50, 516, 484
+cash
+	bounds: 1190, 110, 304, 238
+	offsets: 0, 0, 304, 239
+	rotate: 90
+cash bling
+	bounds: 1369, 650, 68, 70
+	offsets: 18, 13, 100, 100
+cash shine
+	bounds: 2, 9, 426, 334
+	offsets: 202, 353, 821, 813
+eelctric1
+	bounds: 949, 88, 239, 257
+	offsets: 8, 10, 258, 276
+electric2
+	bounds: 740, 347, 240, 288
+	offsets: 10, 9, 259, 307
+electric3
+	bounds: 677, 61, 284, 270
+	offsets: 10, 11, 304, 291
+	rotate: 90
+electrocute
+	bounds: 1184, 450, 273, 279
+eletric
+	bounds: 949, 5, 176, 81
+	offsets: 0, 30, 176, 133
+speed
+	bounds: 430, 9, 336, 245
+	rotate: 90
+speed arrow1
+	bounds: 1422, 83, 184, 53
+	offsets: 0, 14, 186, 82
+	rotate: 90
+time
+	bounds: 982, 347, 212, 247
+	offsets: 28, 0, 271, 249
+time +
+	bounds: 677, 5, 184, 54
+	offsets: 0, 14, 186, 84
